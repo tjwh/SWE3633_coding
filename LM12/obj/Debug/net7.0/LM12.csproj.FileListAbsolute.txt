@@ -1,0 +1,15 @@
+C:\Users\user\coding\SWE3633_coding\LM12\bin\Debug\net7.0\LM12.exe
+C:\Users\user\coding\SWE3633_coding\LM12\bin\Debug\net7.0\LM12.deps.json
+C:\Users\user\coding\SWE3633_coding\LM12\bin\Debug\net7.0\LM12.runtimeconfig.json
+C:\Users\user\coding\SWE3633_coding\LM12\bin\Debug\net7.0\LM12.dll
+C:\Users\user\coding\SWE3633_coding\LM12\bin\Debug\net7.0\LM12.pdb
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\LM12.csproj.AssemblyReference.cache
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\LM12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\LM12.AssemblyInfoInputs.cache
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\LM12.AssemblyInfo.cs
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\LM12.csproj.CoreCompileInputs.cache
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\LM12.dll
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\refint\LM12.dll
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\LM12.pdb
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\LM12.genruntimeconfig.cache
+C:\Users\user\coding\SWE3633_coding\LM12\obj\Debug\net7.0\ref\LM12.dll
