@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\coding\\SWE3633_coding\\LM12\\LM12.csproj": {}
+    "C:\\Users\\user\\coding\\SWE3633_coding\\lm12\\LM12.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\coding\\SWE3633_coding\\LM12\\LM12.csproj": {
+    "C:\\Users\\user\\coding\\SWE3633_coding\\lm12\\LM12.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\coding\\SWE3633_coding\\LM12\\LM12.csproj",
+        "projectUniqueName": "C:\\Users\\user\\coding\\SWE3633_coding\\lm12\\LM12.csproj",
         "projectName": "LM12",
-        "projectPath": "C:\\Users\\user\\coding\\SWE3633_coding\\LM12\\LM12.csproj",
+        "projectPath": "C:\\Users\\user\\coding\\SWE3633_coding\\lm12\\LM12.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\coding\\SWE3633_coding\\LM12\\obj\\",
+        "outputPath": "C:\\Users\\user\\coding\\SWE3633_coding\\lm12\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

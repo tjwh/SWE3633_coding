@@ -8,58 +8,54 @@ namespace LM12
     public class Program
     {
         // Method that will print the parsed binary sequence, its ending state, and a confirmation if it was accepted or denied
-        public static void PrintStateStuff(string binaryInput, State endState) {
-            if(endState == State.Accept) 
-            Console.WriteLine($"It ended in state " + endState + " (Accepted!)\n");
-            
-            else Console.WriteLine($"It ended in state " + endState + " (Denied)\n");
+        private static void PrintFinalState(string binaryInput, State endState) {
+            Console.WriteLine($"It ended in state " + endState);
         }
         
-        // A helper method used by the state machine to print state changes without spamming like 3 lines of code in each switch case
-        public static State ChangeState(State currState, State nextState, int changeNum) {
+        // Helper method to print state changes
+        private static void PrintStateChange(State currState, State nextState, int changeNum) {
             Console.WriteLine($"State Change #" + (changeNum + 1) + ": " + currState + " -> " + nextState);
-
-            return nextState;
         }
         
         /* 
         The state machine which takes in an input string of assumed even-length binary data and transitions through states
         according to LM12's diagram. Returns the final state of the binary sequence
         */
-        public static State StateMachine(string inputBinaryString) {
-            State currState = State.A; 
-            
-            Console.WriteLine($"Your entered binary sequence: " + inputBinaryString);
-            // This is pretty ugly I guess, maybe we could discuss better ways of handling this? :)
-            for(int i = 0; i < inputBinaryString.Length; i++) {
-                switch(currState) {
-                    case State.A when inputBinaryString[i] == '0':
-                        currState = ChangeState(State.A, State.B, i);
-                        break;
-                    case State.A when inputBinaryString[i] == '1':
-                        currState = ChangeState(State.A, State.A, i);
-                        break;
-                    case State.B when inputBinaryString[i] == '0':
-                        currState = ChangeState(State.A, State.C, i);
-                        break;
-                    case State.B when inputBinaryString[i] == '1':
-                        currState = ChangeState(State.A, State.A, i);
-                        break;
-                    case State.C when inputBinaryString[i] == '0':
-                        currState = ChangeState(State.A, State.D, i);
-                        break;
-                    case State.C when inputBinaryString[i] == '1':
-                        currState = ChangeState(State.A, State.A, i);
-                        break;
-                    case State.D when inputBinaryString[i] == '0':
-                        currState = ChangeState(State.A, State.Accept, i);
-                        break;
-                    case State.D when inputBinaryString[i] == '1':
-                        currState = ChangeState(State.A, State.A, i);
-                        break;
-                }
+        private static State StateTransition(State currState, char input) {
+            switch(currState) {
+                case State.A when input == '0':
+                    return State.B;
+                case State.A when input == '1':
+                    return State.A;
+                case State.B when input == '0':
+                    return State.C;
+                case State.B when input == '1':
+                    return State.A;
+                case State.C when input == '0':
+                    return State.D;
+                case State.C when input == '1':
+                    return State.A;
+                case State.D when input == '0':
+                    return State.Accept;
+                case State.D when input == '1':
+                    return State.A;
+                default:
+                    return State.Accept;
             }
-            return currState;
+        }
+        
+        public static bool ValidateString(string input) {
+            State currState = State.A;
+
+            for(int i = 0; i < input.Length; i++) {
+                State newState = StateTransition(currState, input[i]);
+                PrintStateChange(currState, newState, i);
+                currState = newState;
+            }
+
+            PrintFinalState(input, currState);
+            
+            return currState == State.Accept;
         }
         
         static void Main()
@@ -78,8 +74,12 @@ namespace LM12
 
             // Passes each binary sequence into the state machine and prints them
             for(int i = 0; i < binarySequences.Length; i++) {
-                State finalState = StateMachine(binarySequences[i]); // :)
-                PrintStateStuff(binarySequences[i], finalState);
+                Console.WriteLine("Your entered binary sequence: " + binarySequences[i]);
+                
+                if(ValidateString(binarySequences[i])) {
+                    Console.WriteLine("Sequence Accepted!\n");
+                }
+                else Console.WriteLine("Sequence Denied\n");
             }
         }
     }
