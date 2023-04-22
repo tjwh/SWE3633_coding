@@ -7,7 +7,7 @@ namespace LM12
     
     public class Program
     {
-        // Method that will print the parsed binary sequence, its ending state, and a confirmation if it was accepted or denied
+        // Method that will prints a state (final state for our context)
         private static void PrintFinalState(string binaryInput, State endState) {
             Console.WriteLine($"It ended in state " + endState);
         }
@@ -17,10 +17,7 @@ namespace LM12
             Console.WriteLine($"State Change #" + (changeNum + 1) + ": " + currState + " -> " + nextState);
         }
         
-        /* 
-        The state machine which takes in an input string of assumed even-length binary data and transitions through states
-        according to LM12's diagram. Returns the final state of the binary sequence
-        */
+        // State machine. Takes in a state and the char to parse. Returns the state to transition to
         private static State StateTransition(State currState, char input) {
             switch(currState) {
                 case State.A when input == '0':
@@ -44,6 +41,7 @@ namespace LM12
             }
         }
         
+        // Handles calls to the state machine
         public static bool ValidateString(string input) {
             State currState = State.A;
 
