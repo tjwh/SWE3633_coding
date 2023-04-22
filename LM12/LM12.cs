@@ -78,7 +78,8 @@ namespace LM12
 
             // Passes each binary sequence into the state machine and prints them
             for(int i = 0; i < binarySequences.Length; i++) {
-                PrintStateStuff(binarySequences[i], StateMachine(binarySequences[i]));
+                State finalState = StateMachine(binarySequences[i]); // :)
+                PrintStateStuff(binarySequences[i], finalState);
             }
         }
     }
